@@ -3,7 +3,20 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "tsserver", "gopls", "tailwindcss", "html", "htmx", "prismals" }
+local servers = {
+    "cssls",
+    "tsserver",
+    "gopls",
+    "tailwindcss",
+    "html",
+    "htmx",
+    "prismals",
+    "csharp_ls",
+    "kotlin_language_server",
+    "pyright",
+    "svelte",
+    "jdtls",
+}
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

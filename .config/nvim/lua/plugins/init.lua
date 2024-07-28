@@ -150,6 +150,14 @@ local plugins = {
         },
     },
     {
+        "MeanderingProgrammer/markdown.nvim",
+        main = "render-markdown",
+        opts = {},
+        name = "render-markdown",
+        dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" },
+        cmd = { "RenderMarkdown" },
+    },
+    {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
