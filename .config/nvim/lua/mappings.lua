@@ -5,6 +5,7 @@ local map = vim.keymap.set
 -- Misc
 map("n", "<space><space>", ":Telescope find_files<cr>")
 map("n", "<leader>ce", ":e<CR>", { desc = "Re-edits file (Restarts LSP)" })
+map("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exits terminal mode." })
 
 -- Normal mode mappings
 map("i", "kj", "<ESC>", { desc = "Enter Normal mode" })

@@ -3,6 +3,7 @@
   "blocks": [
     {
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
           "background": "#0077c2",
@@ -91,7 +92,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#21c7c7",
+          "foreground": "#0077c2",
           "style": "plain",
           "template": "\u2570\u2500",
           "type": "text"
