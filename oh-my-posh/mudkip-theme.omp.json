@@ -8,30 +8,8 @@
         {
           "background": "#0077c2",
           "foreground": "#ffffff",
-          "leading_diamond": "\u256d\u2500\ue0b6",
+          "leading_diamond": "\u256d\u2500\ue0b2",
           "style": "diamond",
-          "template": " {{ .Name }} ",
-          "type": "shell",
-	  "newline": true
-        },
-        {
-          "background": "#ef5350",
-          "foreground": "#FFFB38",
-          "properties": {
-            "root_icon": "\uf292"
-          },
-          "style": "diamond",
-          "template": "<parentBackground>\ue0b0</> \uf0e7 ",
-          "type": "root"
-        },
-        {
-          "background": "#444444",
-          "foreground": "#E4E4E4",
-          "powerline_symbol": "\ue0b0",
-          "properties": {
-            "style": "full"
-          },
-          "style": "powerline",
           "template": " {{ .Path }} ",
           "type": "path"
         },
@@ -75,6 +53,23 @@
           "type": "node"
         },
         {
+          "type": "battery",
+          "style": "diamond",
+          "foreground": "#193549",
+          "background": "#ffeb3b",
+          "background_templates": [
+            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
+            "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+          ],
+          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }} ",
+          "properties": {
+            "discharging_icon": " ",
+            "charging_icon": " ",
+            "charged_icon": " "
+          }
+        },
+        {
           "background": "#40c4ff",
           "foreground": "#ffffff",
           "invert_powerline": true,
@@ -114,8 +109,7 @@
     }
   ],
  "transient_prompt": {
-     "background": "transparent",
-     "template": "{{now | date \"15:04:05\"}} > ",
+     "template": "{{now | date \"15:04:05\"}} → ",
      "newline": true
  },
  "version": 2

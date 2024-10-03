@@ -5,11 +5,10 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local servers = {
     "cssls",
-    "tsserver",
+    "ts_ls",
     "gopls",
     "tailwindcss",
     "html",
-    "htmx",
     "prismals",
     "csharp_ls",
     "kotlin_language_server",

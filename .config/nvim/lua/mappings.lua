@@ -6,6 +6,8 @@ local map = vim.keymap.set
 map("n", "<space><space>", ":Telescope find_files<cr>")
 map("n", "<leader>ce", ":e<CR>", { desc = "Re-edits file (Restarts LSP)" })
 map("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exits terminal mode" })
+map("t", "kj", "<C-\\><C-n>", { desc = "Exits terminal mode" })
+map("t", "jk", "<C-\\><C-n>", { desc = "Exits terminal mode" })
 map("n", "<leader>rm", ":RenderMarkdown toggle<CR>", { desc = "Toggles markdown rendering" })
 
 -- Normal mode mappings
@@ -37,7 +39,7 @@ map("n", "<leader>tdt", ":TodoTelescope<cr>", { desc = "Opens up the Todo commen
 map("n", "<leader>tdl", ":TodoLocList<cr>", { desc = "Opens up the Todo list" })
 
 -- Trouble
-map("n", "<leader>trt", "<CMD>TroubleToggle<CR>", { desc = "Toggle Trouble Diagnostics" })
+map("n", "<leader>trt", "<CMD>Trouble diagnostics toggle<CR>", { desc = "Toggle Trouble Diagnostics" })
 
 -- CarbonNowSh
 map("v", "<F5>", ":CarbonNowSh<CR>", { desc = "Exports code to Carbon.now.sh" })

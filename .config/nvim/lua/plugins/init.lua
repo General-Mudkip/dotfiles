@@ -5,6 +5,10 @@ local plugins = {
         { import = "nvcommunity.motion.neoscroll" },
     },
     {
+        "mfussenegger/nvim-dap",
+        opts = {},
+    },
+    {
         "onsails/lspkind.nvim",
     },
     {
@@ -161,13 +165,35 @@ local plugins = {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
-        cmd = { "TroubleToggle" },
+        cmd = { "Trouble" },
     },
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {},
         cmd = { "TodoTrouble", "TodoLocList", "TodoTelescope" },
+    },
+    {
+        "mfussenegger/nvim-jdtls",
+        opts = {},
+    },
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*", -- recommended, use latest release instead of latest commit
+        lazy = true,
+        ft = "markdown",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        opts = {
+            workspaces = {
+                {
+                    name = "ISE",
+                    path = "/mnt/c/Users/bence/Documents/ISE/",
+                },
+            },
+        },
     },
 }
 
