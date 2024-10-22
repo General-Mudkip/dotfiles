@@ -5,16 +5,21 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local servers = {
     "cssls",
+    "astro",
+    "clangd",
+    "asm_lsp",
     "ts_ls",
     "gopls",
     "tailwindcss",
     "html",
+    "jsonls",
     "prismals",
     "csharp_ls",
     "kotlin_language_server",
     "pyright",
     "svelte",
     "jdtls",
+    "eslint",
 }
 
 -- lsps with default config

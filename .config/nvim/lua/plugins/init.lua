@@ -64,25 +64,12 @@ local plugins = {
     },
     {
         "williamboman/mason.nvim",
-        opts = {
-            ensure_installed = {
-                "rust-analyzer",
-                "typescript-language-server",
-                "tailwindcss-language-server",
-                "prisma-language-server",
-                "prettier",
-                "html",
-                "gotests",
-                "goimports",
-                "gopls",
-                "astro-language-server",
-                "lua-language-server",
-            },
-        },
+        opts = {},
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        cmd = { "LspInstall", "LspRemove" },
+        cmd = { "LspInfo", "LspInstall", "LspRemove" },
+        opts = {},
     },
     {
         "neovim/nvim-lspconfig",
