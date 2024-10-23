@@ -1,15 +1,15 @@
 [shell]
 program="/bin/zsh"
 
-[window]
-decorations="None"
-
 [font]
-normal.family={family = "FiraCode Nerd Font Propo", style = "Regular"}
-bold.family={family = "FiraCode Nerd Font Propo", style = "Bold"}
+normal={family = "FiraCode Nerd Font Propo", style = "Regular"}
+bold={family = "FiraCode Nerd Font Propo", style = "Bold"}
 
 size = 15.0
 
+[window]
+dimensions = {columns = 120, lines = 35}
+padding={x=16,y=4}
+
 [mouse]
 hide_when_typing=true
-

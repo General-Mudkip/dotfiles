@@ -29,6 +29,10 @@ map("n", "<M-k>", ":MoveLine(-1)<CR>", { desc = "Moves line down" })
 map("v", "<M-j>", ":MoveBlock(1)<CR>", { desc = "Moves line up" })
 map("v", "<M-k>", ":MoveBlock(-1)<CR>", { desc = "Moves line down" })
 
+-- Precognition
+map("n", "<leader>pct", ":Precognition toggle<CR>", { desc = "Toggles Precognition" })
+map("n", "<leader>pcp", ":Precognition peek<CR>", { desc = "Peeks at Precognition commands" })
+
 -- Refactor
 map("x", "<leader>re", ":Refactor extract<cr>", { desc = "Extracts function" })
 map("x", "<leader>rf", ":Refactor extract_to_file<cr>", { desc = "Extracts function to file" })
