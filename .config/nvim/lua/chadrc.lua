@@ -5,7 +5,18 @@
 local M = {}
 
 M.base46 = {
-    theme = "decay",
+    hl_override = {
+        Comment = {
+            fg = "green",
+            italic = true,
+            bold = true,
+        },
+        ["@comment"] = {
+            fg = "#42dc32",
+            italic = true,
+        },
+    },
+    theme = "ayu_dark",
 }
 
 M.ui = {
