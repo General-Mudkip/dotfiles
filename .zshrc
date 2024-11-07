@@ -5,8 +5,9 @@ export PATH="$PATH:/usr/local/nvim-linux64/bin"
 eval "$(zoxide init --cmd cd zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export GOROOT=/usr/local/go/
-export GOPATH=$HOME/go
+export GOPATH=/home/bence/go
+export GOROOT=/usr/lib/golang
+export PATH=$PATH:$GOROOT/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

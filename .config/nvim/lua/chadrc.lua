@@ -16,7 +16,7 @@ M.base46 = {
             italic = true,
         },
     },
-    theme = "ayu_dark",
+    theme = "nightowl",
 }
 
 M.ui = {
