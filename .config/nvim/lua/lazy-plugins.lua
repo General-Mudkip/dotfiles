@@ -11,6 +11,10 @@
 require("lazy").setup({
     "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
+    require "kickstart.plugins.snacks",
+
+    require "kickstart.plugins.kanagawa",
+
     require "kickstart/plugins/gitsigns",
 
     require "kickstart/plugins/which-key",
@@ -23,19 +27,23 @@ require("lazy").setup({
 
     require "kickstart/plugins/cmp",
 
-    require "kickstart/plugins/tokyonight",
-
     require "kickstart/plugins/todo-comments",
 
     require "kickstart/plugins/mini",
 
     require "kickstart/plugins/treesitter",
 
+    require "kickstart.plugins.trouble",
+
+    require "kickstart.plugins.barbar",
+
     require "kickstart.plugins.debug",
 
     require "kickstart.plugins.indent_line",
 
     require "kickstart.plugins.lint",
+
+    require "kickstart.plugins.markview",
 }, {
     ui = {
         -- If you are using a Nerd Font: set icons to an empty table which will use the

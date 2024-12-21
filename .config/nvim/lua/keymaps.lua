@@ -8,12 +8,38 @@ local map = vim.keymap.set
 map("i", "kj", "<ESC>", { desc = "Enter Normal mode" })
 map("i", "jk", "<ESC>", { desc = "Enter Normal mode" })
 
+map("n", "<C-s>", "<cmd>w<CR>", { desc = "Save" })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Telescope
-map("n", "<space><space>", ":Telescope find_files<cr>")
+-- Barbar
+
+-- Move to previous/next
+map("n", "<Tab>", "<Cmd>BufferNext<CR>")
+map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>")
+
+-- Re-order to previous/next
+map("n", "<A-h>", "<Cmd>BufferMovePrevious<CR>")
+map("n", "<A-l>", "<Cmd>BufferMoveNext<CR>")
+
+-- Goto buffer in position...
+map("n", "<leader>1", "<Cmd>BufferGoto 1<CR>")
+map("n", "<leader>2", "<Cmd>BufferGoto 2<CR>")
+map("n", "<leader>3", "<Cmd>BufferGoto 3<CR>")
+map("n", "<leader>4", "<Cmd>BufferGoto 4<CR>")
+map("n", "<leader>5", "<Cmd>BufferGoto 5<CR>")
+map("n", "<leader>6", "<Cmd>BufferGoto 6<CR>")
+map("n", "<leader>7", "<Cmd>BufferGoto 7<CR>")
+map("n", "<leader>8", "<Cmd>BufferGoto 8<CR>")
+map("n", "<leader>9", "<Cmd>BufferGoto 9<CR>")
+
+-- Close buffer
+map("n", "<leader>x", "<Cmd>BufferClose<CR>")
+
+-- Mini Files
+map("n", "<leader>e", "<cmd>lua MiniFiles.open()<CR>", { desc = "Open mini-files" })
 
 -- Diagnostic keymaps
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
