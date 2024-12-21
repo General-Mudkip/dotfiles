@@ -1,9 +1,6 @@
 -- Shorthand for mapping keys
 local map = vim.keymap.set
 
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
-
 -- Normal mode mappings
 map("i", "kj", "<ESC>", { desc = "Enter Normal mode" })
 map("i", "jk", "<ESC>", { desc = "Enter Normal mode" })
@@ -14,8 +11,25 @@ map("n", "<C-s>", "<cmd>w<CR>", { desc = "Save" })
 --  See `:help hlsearch`
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Barbar
+-- Themes
+map("n", "<leader>ttl", function()
+    require("kanagawa").load "lotus"
+end, { desc = "Switch to Kanagawa Lotus" })
 
+map("n", "<leader>ttd", function()
+    require("kanagawa").load "dragon"
+end, { desc = "Switch to Kanagawa Dragon" })
+
+map("n", "<leader>ttw", function()
+    require("kanagawa").load "wave"
+end, { desc = "Switch to Kanagawa Wave" })
+
+-- Lazygit
+map("n", "<leader>gg", function()
+    Snacks.lazygit.open()
+end, { desc = "Open Lazygit" })
+
+-- -- BARBAR
 -- Move to previous/next
 map("n", "<Tab>", "<Cmd>BufferNext<CR>")
 map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>")
