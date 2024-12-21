@@ -1,5 +1,10 @@
 local plugins = {
     {
+        "ThePrimeagen/vim-be-good",
+        opts = {},
+        cmd = { "VimBeGood" } 
+    },
+    {
         "NvChad/nvcommunity",
         { import = "nvcommunity.editor.satellite" },
         { import = "nvcommunity.motion.neoscroll" },
@@ -195,24 +200,6 @@ local plugins = {
     {
         "mfussenegger/nvim-jdtls",
         opts = {},
-    },
-    {
-        "epwalsh/obsidian.nvim",
-        version = "*", -- recommended, use latest release instead of latest commit
-        lazy = true,
-        ft = "markdown",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        opts = {
-            workspaces = {
-                {
-                    name = "ISE",
-                    path = "/mnt/c/Users/bence/Documents/ISE/",
-                },
-            },
-        },
     },
 }
 
