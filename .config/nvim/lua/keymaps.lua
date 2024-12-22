@@ -11,6 +11,14 @@ map("n", "<C-s>", "<cmd>w<CR>", { desc = "Save" })
 --  See `:help hlsearch`
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Tailwind Tools
+map("n", "<leader>tas", ":TailwindSort<CR>", { desc = "Sorts Tailwind Classes" })
+map("n", "<leader>tah", ":TailwindConcealToggle<CR>", { desc = "Toggles Tailwind class conceal" })
+map("n", "<leader>tac", ":TailwindColorToggle<CR>", { desc = "Toggles Tailwind colours" })
+
+-- Undo Tree
+map("n", "<leader>ut", "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", { desc = "Toggles UndoTree" })
+
 -- Themes
 map("n", "<leader>ttl", function()
     require("kanagawa").load "lotus"

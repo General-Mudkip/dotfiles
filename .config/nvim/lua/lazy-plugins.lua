@@ -15,6 +15,10 @@ require("lazy").setup({
 
     require "kickstart.plugins.kanagawa",
 
+    require "kickstart.plugins.tailwind-tools",
+
+    require "kickstart.plugins.undotree",
+
     require "kickstart/plugins/gitsigns",
 
     require "kickstart/plugins/which-key",
