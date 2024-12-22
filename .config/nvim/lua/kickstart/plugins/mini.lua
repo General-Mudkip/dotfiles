@@ -3,7 +3,7 @@ return {
         "echasnovski/mini.nvim",
         config = function()
             -- Better Around/Inside textobjects
-            --
+
             -- Examples:
             --  - va)  - [V]isually select [A]round [)]paren
             --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
@@ -22,7 +22,14 @@ return {
             require("mini.comment").setup()
 
             require("mini.files").setup {
-                mappings = { open = "<leader>e" },
+                mappings = {
+                    open = "<leader>e",
+                    go_in_plus = "<enter>",
+                },
+                windows = {
+                    preview = true,
+                    width_preview = 60,
+                },
             }
 
             require("mini.icons").setup()
