@@ -9,7 +9,7 @@ size = 11.0
 
 [window]
 dimensions = {columns = 120, lines = 35}
-padding={x=0,y=0}
+padding={x=4,y=0}
 
 [mouse]
 hide_when_typing=true

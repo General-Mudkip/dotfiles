@@ -174,6 +174,7 @@ return {
                             completion = {
                                 callSnippet = "Replace",
                             },
+                            format = { enable = true, defaultConfig = { indent_size = 4 } },
                             -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
                             -- diagnostics = { disable = { 'missing-fields' } },
                         },
@@ -208,6 +209,10 @@ return {
                         require("lspconfig")[server_name].setup(server)
                     end,
                 },
+            }
+            require("go").setup {
+                lsp_cfg = false,
+                -- other setups...
             }
         end,
     },

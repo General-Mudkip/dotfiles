@@ -19,6 +19,10 @@ require("lazy").setup({
 
     require "kickstart.plugins.undotree",
 
+    require "kickstart.plugins.moveline",
+
+    require "kickstart.plugins.go-plugin",
+
     require "kickstart/plugins/gitsigns",
 
     require "kickstart/plugins/which-key",

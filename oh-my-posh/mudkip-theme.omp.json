@@ -44,6 +44,14 @@
       "newline": true
     },
     {
+      "type": "python",
+      "style": "powerline",
+      "powerline_symbol": "",
+      "foreground": "#100e23",
+      "background": "#906cff",
+      "template": "  {{ .Full }} "
+    },
+    {
       "type": "prompt",
       "alignment": "right",
       "segments": [

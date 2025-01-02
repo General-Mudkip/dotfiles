@@ -8,6 +8,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export GOPATH=/home/bence/go
 export GOROOT=/usr/lib/golang
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$HOME/go/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -28,3 +29,6 @@ esac
 # pnpm end
 export PATH="$PATH:/home/bence/.modular/bin"
 export PATH=$HOME/.local/bin:$PATH
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
