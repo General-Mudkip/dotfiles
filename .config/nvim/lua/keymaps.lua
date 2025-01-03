@@ -26,17 +26,17 @@ map("n", "<CM-l>", "<CMD>lua require('harpoon.ui').nav_next()<CR>", { desc = "Na
 map("n", "<CM-h>", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", { desc = "Navigate to the previous mark" })
 
 -- Themes
-map("n", "<leader>ttl", function()
-    require("kanagawa").load "lotus"
-end, { desc = "Switch to Kanagawa Lotus" })
-
-map("n", "<leader>ttd", function()
-    require("kanagawa").load "dragon"
-end, { desc = "Switch to Kanagawa Dragon" })
-
-map("n", "<leader>ttw", function()
-    require("kanagawa").load "wave"
-end, { desc = "Switch to Kanagawa Wave" })
+-- map("n", "<leader>ttl", function()
+--     require("kanagawa").load "lotus"
+-- end, { desc = "Switch to Kanagawa Lotus" })
+--
+-- map("n", "<leader>ttd", function()
+--     require("kanagawa").load "dragon"
+-- end, { desc = "Switch to Kanagawa Dragon" })
+--
+-- map("n", "<leader>ttw", function()
+--     require("kanagawa").load "wave"
+-- end, { desc = "Switch to Kanagawa Wave" })
 
 -- Lazygit
 map("n", "<leader>gg", function()
