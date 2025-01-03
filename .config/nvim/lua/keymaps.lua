@@ -19,6 +19,12 @@ map("n", "<leader>tac", ":TailwindColorToggle<CR>", { desc = "Toggles Tailwind c
 -- Undo Tree
 map("n", "<leader>ut", "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", { desc = "Toggles UndoTree" })
 
+-- Harpoon
+map("n", "<leader>ha", "<CMD>lua require('harpoon.mark').add_file()<CR>", { desc = "Adds the current file to Harpoon" })
+map("n", "<leader>hg", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "View all project marks" })
+map("n", "<CM-l>", "<CMD>lua require('harpoon.ui').nav_next()<CR>", { desc = "Navigate to the next mark" })
+map("n", "<CM-h>", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", { desc = "Navigate to the previous mark" })
+
 -- Themes
 map("n", "<leader>ttl", function()
     require("kanagawa").load "lotus"
@@ -54,15 +60,15 @@ map("n", "<A-h>", "<Cmd>BufferMovePrevious<CR>")
 map("n", "<A-l>", "<Cmd>BufferMoveNext<CR>")
 
 -- Goto buffer in position...
-map("n", "<C-1>", "<Cmd>BufferGoto 1<CR>")
-map("n", "<C-2>", "<Cmd>BufferGoto 2<CR>")
-map("n", "<C-3>", "<Cmd>BufferGoto 3<CR>")
-map("n", "<C-4>", "<Cmd>BufferGoto 4<CR>")
-map("n", "<C-5>", "<Cmd>BufferGoto 5<CR>")
-map("n", "<C-6>", "<Cmd>BufferGoto 6<CR>")
-map("n", "<C-7>", "<Cmd>BufferGoto 7<CR>")
-map("n", "<C-8>", "<Cmd>BufferGoto 8<CR>")
-map("n", "<C-9>", "<Cmd>BufferGoto 9<CR>")
+map("n", "<leader>1", "<Cmd>BufferGoto 1<CR>")
+map("n", "<leader>2", "<Cmd>BufferGoto 2<CR>")
+map("n", "<leader>3", "<Cmd>BufferGoto 3<CR>")
+map("n", "<leader>4", "<Cmd>BufferGoto 4<CR>")
+map("n", "<leader>5", "<Cmd>BufferGoto 5<CR>")
+map("n", "<leader>6", "<Cmd>BufferGoto 6<CR>")
+map("n", "<leader>7", "<Cmd>BufferGoto 7<CR>")
+map("n", "<leader>8", "<Cmd>BufferGoto 8<CR>")
+map("n", "<leader>9", "<Cmd>BufferGoto 9<CR>")
 
 -- Close buffer
 map("n", "<leader>x", "<Cmd>BufferClose<CR>")

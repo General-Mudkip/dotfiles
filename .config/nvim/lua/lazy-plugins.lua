@@ -52,6 +52,8 @@ require("lazy").setup({
     require "kickstart.plugins.lint",
 
     require "kickstart.plugins.markview",
+
+    require "kickstart.plugins.harpoon",
 }, {
     ui = {
         -- If you are using a Nerd Font: set icons to an empty table which will use the
