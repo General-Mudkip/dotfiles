@@ -23,6 +23,8 @@ require("lazy").setup({
 
     require "kickstart.plugins.go-plugin",
 
+    require "kickstart.plugins.colorful-menu",
+
     require "kickstart/plugins/gitsigns",
 
     require "kickstart/plugins/which-key",

@@ -2,10 +2,11 @@
 local map = vim.keymap.set
 
 -- Normal mode mappings
-map("i", "kj", "<ESC>", { desc = "Enter Normal mode" })
-map("i", "jk", "<ESC>", { desc = "Enter Normal mode" })
-
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "Save" })
+
+map("i", "<M-j>", "{<Enter>}<Esc>O", { desc = "Create new curly brackets" })
+
+map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "LSP [r]en[a]me" })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -26,17 +27,9 @@ map("n", "<CM-l>", "<CMD>lua require('harpoon.ui').nav_next()<CR>", { desc = "Na
 map("n", "<CM-h>", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", { desc = "Navigate to the previous mark" })
 
 -- Themes
--- map("n", "<leader>ttl", function()
---     require("kanagawa").load "lotus"
--- end, { desc = "Switch to Kanagawa Lotus" })
---
--- map("n", "<leader>ttd", function()
---     require("kanagawa").load "dragon"
--- end, { desc = "Switch to Kanagawa Dragon" })
---
--- map("n", "<leader>ttw", function()
---     require("kanagawa").load "wave"
--- end, { desc = "Switch to Kanagawa Wave" })
+map("n", "<leader>ttw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "Switch to Kanagawa Wave" })
+map("n", "<leader>ttd", "<CMD>colorscheme kanagawa-dragon<CR>", { desc = "Switch to Kanagawa Dragon" })
+map("n", "<leader>ttl", "<CMD>colorscheme kanagawa-lotus<CR>", { desc = "Switch to Kanagawa Lotus" })
 
 -- Lazygit
 map("n", "<leader>gg", function()

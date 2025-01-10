@@ -15,6 +15,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk@21/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
+export PATH="/home/bence/zig-installs/zig-linux-x86_64-0.14.0-dev.2628+5b5c60f43:$PATH"
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
   tmux attach-session -t default || tmux new-session -s default

@@ -1,3 +1,9 @@
+local format = function(_, item)
+    item.menu = ""
+
+    return item
+end
+
 return {
     { -- Autocompletion
         "hrsh7th/nvim-cmp",
@@ -48,6 +54,11 @@ return {
                     end,
                 },
                 completion = { completeopt = "menu,menuone,noinsert" },
+
+                ---@diagnostic disable-next-line: missing-fields
+                formatting = {
+                    format = format,
+                },
 
                 -- For an understanding of why these mappings were
                 -- chosen, you will need to read `:help ins-completion`
