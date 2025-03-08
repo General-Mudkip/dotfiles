@@ -4,9 +4,11 @@ local map = vim.keymap.set
 -- Normal mode mappings
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "Save" })
 
-map("i", "<M-j>", "{<Enter>}<Esc>O", { desc = "Create new curly brackets" })
-
 map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "LSP [r]en[a]me" })
+
+-- Up/Down centralisation
+map("n", "<C-u>", "<C-u>zz", { desc = "Go up and center" })
+map("n", "<C-d>", "<C-d>zz", { desc = "Go up and center" })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -30,6 +32,7 @@ map("n", "<CM-h>", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", { desc = "Na
 map("n", "<leader>ttw", "<CMD>colorscheme kanagawa-wave<CR>", { desc = "Switch to Kanagawa Wave" })
 map("n", "<leader>ttd", "<CMD>colorscheme kanagawa-dragon<CR>", { desc = "Switch to Kanagawa Dragon" })
 map("n", "<leader>ttl", "<CMD>colorscheme kanagawa-lotus<CR>", { desc = "Switch to Kanagawa Lotus" })
+map("n", "<leader>ttb", "<CMD>colorscheme binary<CR>", { desc = "Switch to Binary" })
 
 -- Lazygit
 map("n", "<leader>gg", function()
@@ -37,11 +40,11 @@ map("n", "<leader>gg", function()
 end, { desc = "Open Lazygit" })
 
 -- MoveLine
-map("n", "<M-j>", ":MoveLine(1)<CR>", { desc = "Moves line up" })
-map("n", "<M-k>", ":MoveLine(-1)<CR>", { desc = "Moves line down" })
+map("n", "<M-J>", ":MoveLine(1)<CR>", { desc = "Moves line up" })
+map("n", "<M-K>", ":MoveLine(-1)<CR>", { desc = "Moves line down" })
 
-map("v", "<M-j>", ":MoveBlock(1)<CR>", { desc = "Moves line up" })
-map("v", "<M-k>", ":MoveBlock(-1)<CR>", { desc = "Moves line down" })
+map("v", "<M-J>", ":MoveBlock(1)<CR>", { desc = "Moves line up" })
+map("v", "<M-K>", ":MoveBlock(-1)<CR>", { desc = "Moves line down" })
 
 -- -- BARBAR
 -- Move to previous/next
@@ -49,8 +52,8 @@ map("n", "<Tab>", "<Cmd>BufferNext<CR>")
 map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>")
 
 -- Re-order to previous/next
-map("n", "<A-h>", "<Cmd>BufferMovePrevious<CR>")
-map("n", "<A-l>", "<Cmd>BufferMoveNext<CR>")
+map("n", "<M-H>", "<Cmd>BufferMovePrevious<CR>")
+map("n", "<M-L>", "<Cmd>BufferMoveNext<CR>")
 
 -- Goto buffer in position...
 map("n", "<leader>1", "<Cmd>BufferGoto 1<CR>")

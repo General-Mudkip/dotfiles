@@ -13,7 +13,7 @@ require("lazy").setup({
 
     require "kickstart.plugins.snacks",
 
-    require "kickstart.plugins.kanagawa",
+    require "kickstart.plugins.themes",
 
     require "kickstart.plugins.tailwind-tools",
 
@@ -24,6 +24,8 @@ require("lazy").setup({
     require "kickstart.plugins.go-plugin",
 
     require "kickstart.plugins.colorful-menu",
+
+    require "kickstart.plugins.copilot",
 
     require "kickstart/plugins/gitsigns",
 

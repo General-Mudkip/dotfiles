@@ -9,6 +9,7 @@ export GOPATH=/home/bence/go
 export GOROOT=/usr/lib/golang
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:/home/bence/Downloads/idea-IU-243.23654.189/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

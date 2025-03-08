@@ -13,5 +13,15 @@ return {
             vim.cmd.colorscheme "kanagawa"
         end,
     },
+    {
+        {
+            "jackplus-xyz/binary.nvim",
+            opts = {
+                colors = {
+                    bg = "#FFA000",
+                },
+            },
+        },
+    },
 }
 -- vim: ts=2 sts=2 sw=2 et
