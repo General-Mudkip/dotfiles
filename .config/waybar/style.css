@@ -1,0 +1,53 @@
+*{
+    font-family: "NotoSans", "Font Awesome 6 Free", monospace;
+    font-size: 16px;
+    min-height: 0;
+    color: white;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces{
+    margin-top: 3px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    margin-left: 25px;
+}
+
+#workspaces button{
+    border-radius: 0px;
+    margin-right: 10px;
+    padding: 1px 10px;
+    font-weight: bolder;
+    background-color: #181818;
+}
+
+#workspaces button.active, #workspaces button.focused{
+    padding: 0 16px;
+    background: #00A3E0;
+}
+
+#workspaces button:hover{
+    background: #00A3E0;
+}
+
+#tray,
+#mpd,
+#custom-weather,
+#cpu, 
+#temperature, 
+#memory,
+#sway-mode,
+#backlight, 
+#pulseaudio, 
+#custom-vpn,
+#disk,
+#custom-recorder,
+#custom-audiorec,
+#battery, 
+#clock, 
+#network {
+	padding: 0 10px;
+}

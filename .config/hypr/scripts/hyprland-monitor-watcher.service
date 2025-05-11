@@ -1,0 +1,9 @@
+[Unit]
+Description=Hyprland Monitor Auto Switcher
+
+[Service]
+ExecStart=%h/.config/hypr/scripts/toggle-monitors.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
