@@ -21,17 +21,6 @@ return {
 
             require("mini.comment").setup()
 
-            require("mini.files").setup {
-                mappings = {
-                    open = "<leader>e",
-                    go_in_plus = "<enter>",
-                },
-                windows = {
-                    preview = true,
-                    width_preview = 60,
-                },
-            }
-
             require("mini.icons").setup()
         end,
     },

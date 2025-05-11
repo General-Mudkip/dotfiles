@@ -69,9 +69,6 @@ map("n", "<leader>9", "<Cmd>BufferGoto 9<CR>")
 -- Close buffer
 map("n", "<leader>x", "<Cmd>BufferClose<CR>")
 
--- Mini Files
-map("n", "<leader>e", "<cmd>lua MiniFiles.open()<CR>", { desc = "Open mini-files" })
-
 -- Diagnostic keymaps
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 

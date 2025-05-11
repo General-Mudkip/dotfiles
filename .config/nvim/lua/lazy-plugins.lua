@@ -11,6 +11,10 @@
 require("lazy").setup({
     "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
+    require "kickstart.plugins.windsurf",
+
+    require "kickstart.plugins.neotree",
+
     require "kickstart.plugins.snacks",
 
     require "kickstart.plugins.themes",
@@ -24,8 +28,6 @@ require("lazy").setup({
     require "kickstart.plugins.go-plugin",
 
     require "kickstart.plugins.colorful-menu",
-
-    require "kickstart.plugins.copilot",
 
     require "kickstart/plugins/gitsigns",
 

@@ -2,10 +2,11 @@
 program="/bin/zsh"
 
 [font]
-normal={family = "FiraCode Nerd Font Propo", style = "Regular"}
+#normal={family = "Monocraft", style = "Regular"}
+normal={family = "FiraCode Nerd Font Propo", style = "Light"}
 bold={family = "FiraCode Nerd Font Propo", style = "Bold"}
 
-size = 11.0
+size = 10.0
 
 [window]
 dimensions = {columns = 120, lines = 35}
