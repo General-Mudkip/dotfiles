@@ -1,53 +1,215 @@
-*{
-    font-family: "NotoSans", "Font Awesome 6 Free", monospace;
-    font-size: 16px;
+* {
+    font-family: "FiraCode Nerd Font", "Font Awesome 6 Free", monospace;
+    font-size: 14px;
+    font-weight: 500;
     min-height: 0;
-    color: white;
 }
 
 window#waybar {
-    background-color: transparent;
+    background: rgba(24, 24, 37, 0.92);
+    border: 1px solid rgba(224, 175, 187, 0.15);
+    border-radius: 16px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.25),
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-#workspaces{
-    margin-top: 3px;
-    margin-bottom: 2px;
-    margin-right: 10px;
-    margin-left: 25px;
+/* Left modules */
+#custom-launcher {
+    background: linear-gradient(135deg, #FF6B9D 0%, #E0AFBB 100%);
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 0 10px;
+    margin: 4px 0 4px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 107, 157, 0.3);
 }
 
-#workspaces button{
-    border-radius: 0px;
-    margin-right: 10px;
-    padding: 1px 10px;
-    font-weight: bolder;
-    background-color: #181818;
+#custom-launcher:hover {
+    background: linear-gradient(135deg, #FF9AA2 0%, #FFB7B7 100%);
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.4);
 }
 
-#workspaces button.active, #workspaces button.focused{
-    padding: 0 16px;
-    background: #00A3E0;
+#workspaces {
+    background: rgba(46, 48, 56, 0.8);
+    border-radius: 12px;
+    padding: 4px 8px;
+    margin: 4px 4px;
+    border: 1px solid rgba(224, 175, 187, 0.1);
 }
 
-#workspaces button:hover{
-    background: #00A3E0;
+#workspaces button {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: none;
+    border-radius: 8px;
+    padding: 4px 10px;
+    margin: 0 2px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
 }
 
-#tray,
-#mpd,
-#custom-weather,
-#cpu, 
-#temperature, 
-#memory,
-#sway-mode,
-#backlight, 
-#pulseaudio, 
-#custom-vpn,
-#disk,
-#custom-recorder,
-#custom-audiorec,
-#battery, 
-#clock, 
-#network {
-	padding: 0 10px;
+#workspaces button.active {
+    background: linear-gradient(135deg, #E0AFBB 0%, #FF9AA2 100%);
+    color: #1a1a1a;
+    box-shadow: 
+        0 2px 8px rgba(224, 175, 187, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button:hover:not(.active) {
+    background: rgba(224, 175, 187, 0.15);
+    color: #E0AFBB;
+}
+
+/* Special workspace styling */
+#workspaces button.special {
+    background: rgba(138, 43, 226, 0.2);
+    color: #DA70D6;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+#workspaces button.special.active {
+    background: linear-gradient(135deg, #9370DB 0%, #DA70D6 100%);
+    color: #FFFFFF;
+    box-shadow: 
+        0 2px 12px rgba(138, 43, 226, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+#workspaces button.special:hover:not(.active) {
+    background: rgba(138, 43, 226, 0.3);
+    color: #DA70D6;
+}
+
+#tray {
+    background: rgba(46, 48, 56, 0.8);
+    border-radius: 12px;
+    padding: 4px 4px;
+    margin: 4px 4px;
+    border: 1px solid rgba(224, 175, 187, 0.1);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(255, 107, 157, 0.2);
+    border-radius: 6px;
+    margin: 0 1px;
+    padding: 1px;
+}
+
+/* Center module */
+#clock {
+    background: linear-gradient(135deg, rgba(224, 175, 187, 0.3) 0%, rgba(255, 154, 162, 0.25) 100%);
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 6px 16px;
+    margin: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid rgba(224, 175, 187, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+#clock:hover {
+    background: linear-gradient(135deg, rgba(224, 175, 187, 0.4) 0%, rgba(255, 154, 162, 0.35) 100%);
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 2px 8px rgba(224, 175, 187, 0.2);
+}
+
+/* Right modules */
+.modules-right > widget:first-child > #idle_inhibitor {
+    margin-left: 8px;
+}
+
+#idle_inhibitor,
+#pulseaudio,
+#backlight,
+#network,
+#battery,
+#power-profiles-daemon,
+#custom-power {
+    background: rgba(46, 48, 56, 0.85);
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 6px 12px;
+    margin: 4px 2px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+#idle_inhibitor:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#battery:hover,
+#power-profiles-daemon:hover {
+    background: rgba(224, 175, 187, 0.2);
+    color: #E0AFBB;
+    border-color: rgba(224, 175, 187, 0.3);
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+#custom-power {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 0.8) 0%, rgba(255, 71, 87, 0.8) 100%);
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+#custom-power:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 157, 1) 0%, rgba(255, 71, 87, 1) 100%);
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+}
+
+/* Special states */
+#battery.warning {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.8) 0%, rgba(255, 152, 0, 0.8) 100%);
+    color: #1a1a1a;
+}
+
+#battery.critical {
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.9) 0%, rgba(255, 23, 68, 0.9) 100%);
+    color: #FFFFFF;
+}
+
+#idle_inhibitor.activated {
+    background: linear-gradient(135deg, rgba(224, 175, 187, 0.8) 0%, rgba(255, 154, 162, 0.8) 100%);
+    color: #1a1a1a;
+}
+
+#pulseaudio.muted {
+    color: rgba(255, 255, 255, 0.4);
+    background: rgba(46, 48, 56, 0.5);
+}
+
+#network.disconnected {
+    color: rgba(255, 255, 255, 0.4);
+    background: rgba(46, 48, 56, 0.5);
+}
+
+/* Tooltips */
+tooltip {
+    background: rgba(24, 24, 37, 0.95);
+    border: 1px solid rgba(224, 175, 187, 0.2);
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-family: "FiraCode Nerd Font";
+    font-size: 13px;
+}
+
+tooltip label {
+    padding: 6px 10px;
 }

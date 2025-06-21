@@ -1,159 +1,171 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 15,
+    "height": 32,
+    "margin-top": 8,
     "margin-bottom": 0,
-    "margin-top": 2,
+    "margin-left": 12,
+    "margin-right": 12,
+    "spacing": 8,
     "modules-left": [
+        // "custom/launcher",
+        "hyprland/workspaces",
         "tray"
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "clock"
     ],
     "modules-right": [
         "idle_inhibitor",
         "pulseaudio",
         "backlight",
+        "network",
         "battery",
         "power-profiles-daemon",
-        "clock"
+        "custom/power"
     ],
+    "custom/launcher": {
+        "format": "󱄅",
+        "tooltip": false,
+        "on-click": "wofi --show drun -n -I -i"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+            "special": "魔"
+        },
+        "persistent-workspaces": {
+            "*": 5,
+            "special:magic": []
+        },
+        "show-special": true,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 4,
+        "show-passive-items": true
+    },
+    "clock": {
+        "format": "{:%A, %B %d  •  %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "on-click": "gnome-calendar",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#E0AFBB'><b>{}</b></span>",
+                "days": "<span color='#FFFFFF'><b>{}</b></span>",
+                "weeks": "<span color='#FF9AA2'><b>W{}</b></span>",
+                "weekdays": "<span color='#FFB7B7'><b>{}</b></span>",
+                "today": "<span color='#FF6B9D'><b><u>{}</u></b></span>"
+            },
+            "actions": {
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+            }
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰈈",
+            "deactivated": "󰈉"
+        },
+        "tooltip": true
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰸈 Muted",
+        "format-bluetooth": "󰂯 {volume}%",
+        "format-bluetooth-muted": "󰂲 Muted",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ],
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "phone": "",
+            "portable": "",
+            "car": ""
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "󰃞",
+            "󰃟",
+            "󰃠"
+        ],
+        "scroll-step": 5,
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+    "network": {
+        "format-wifi": "󰤨 {signalStrength}%",
+        "format-ethernet": "󰈀 Connected",
+        "format-linked": "󰈀 {ifname}",
+        "format-disconnected": "󰤭 Disconnected",
+        "format-alt": "{essid} ({signalStrength}%)",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%): {ipaddr}/{cidr}",
+        "on-click-right": "nm-connection-editor"
+    },
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "&#8239;{capacity}%",
-        "format-plugged": "&#8239;{capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-alt": "{icon} {time}",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "tooltip-format": "{timeTo}, {capacity}%"
     },
     "power-profiles-daemon": {
         "format": "{icon}",
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-        "tooltip": true,
         "format-icons": {
-            "default": "",
-            "performance": "",
-            "balanced": "",
-            "power-saver": ""
+            "default": "󰾅",
+            "performance": "󰓅",
+            "balanced": "󰾅",
+            "power-saver": "󰾆"
         }
     },
-    "hyprland/workspaces": {
-        "sort-by-name": true,
-        "on-click": "activate"
-    },
-    "hyprland/window": {
-        "max-length": 200,
-        "separate-outputs": true
-    },
-    "tray": {
-        "icon-size": 16,
-        "spacing": 6
-    },
-    "clock": {
-        "locale": "C",
-        "format": " {:%I:%M %p}",
-        "format-alt": " {:%a, %b %d}" // Icon: calendar-alt
-    },
-    "network": {
-        "interval": 2,
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": "",
-        "format-linked": " {ipaddr}",
-        "format-disconnected": " Disconnected",
-        "format-disabled": "",
+    "custom/power": {
+        "format": "󰐥",
         "tooltip": false,
-        "max-length": 20,
-        "min-length": 6,
-        "format-alt": "{essid}"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": " ",
-            "deactivated": " "
-        }
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{icon}&#8239;{percent}%",
-        "format-icons": [
-            "",
-            ""
-        ],
-        "on-scroll-down": "brightnessctl -c backlight set 1%-",
-        "on-scroll-up": "brightnessctl -c backlight set +1%"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-bluetooth-muted": " ",
-        "format-muted": " ",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "🎧",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
-    },
-    "mpd": {
-        "format": "{stateIcon} {artist} - {title}",
-        "format-disconnected": "🎶",
-        "format-stopped": "♪",
-        "interval": 10,
-        "consume-icons": {
-            "on": " " // Icon shows only when "consume" is on
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)",
-        "max-length": 35
-    },
-    "custom/recorder": {
-        "format": " Rec",
-        "format-disabled": " Off-air", //An empty format will hide the module.
-        "return-type": "json",
-        "interval": 1,
-        "exec": "echo '{\"class\": \"recording\"}'",
-        "exec-if": "pgrep wf-recorder"
-    },
-    "custom/audiorec": {
-        "format": "♬ Rec",
-        "format-disabled": "♬ Off-air", //An empty format will hide the module.
-        "return-type": "json",
-        "interval": 1,
-        "exec": "echo '{\"class\": \"audio recording\"}'",
-        "exec-if": "pgrep ffmpeg"
+        "on-click": "wlogout"
     }
 }
